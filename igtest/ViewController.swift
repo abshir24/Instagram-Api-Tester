@@ -9,14 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let server = "http://localhost:8000/test"
+    var server = "http://localhost:8000/test/"
+    
     
     @IBOutlet weak var responseLabel: UILabel!
     
     @IBOutlet weak var userinput: UITextField!
     
     @IBAction func runApi(_ sender: UIButton) {
-        guard let url  = URL(string: server + userinput.text!) else {return}
+        server = server + userinput.text!
+        print(server)
+        guard let url  = URL(string: server) else {return}
         // background task to make request with URLSession
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
@@ -34,6 +37,9 @@ class ViewController: UIViewController {
         // start the task
         task.resume()
     }
+    
+    
+    
     
     
     override func viewDidLoad() {

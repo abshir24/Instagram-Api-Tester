@@ -5,7 +5,8 @@ var bodyParser = require("body-parser");
 // create the express app
 var app = express();
 
-var ig = require('instagram-node').instagram();
+var request = require('request')
+
 // require bodyParser since we need to handle post data for adding a user
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true})); 

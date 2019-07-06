@@ -1,3 +1,5 @@
+var ig = require('instagram-node').instagram();
+
 ig.use({
     client_id: '76eae290f6df49f88ee48e463f875905',
     client_secret: 'dc56d11a209e4768b05f4a0fe5193e68'
