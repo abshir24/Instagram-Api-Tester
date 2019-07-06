@@ -13,8 +13,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var responseLabel: UILabel!
     
+    @IBOutlet weak var userinput: UITextField!
+    
     @IBAction func runApi(_ sender: UIButton) {
-        guard let url  = URL(string: server) else {return}
+        guard let url  = URL(string: server + userinput.text!) else {return}
         // background task to make request with URLSession
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
